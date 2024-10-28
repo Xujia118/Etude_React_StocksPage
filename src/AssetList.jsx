@@ -108,14 +108,18 @@ function AssetList({ assets, onLoadAssets }) {
             <tr>
               {columns.map((column) => (
                 <th className="p-2 border-b-2 text-center hover:bg-gray-200 whitespace-nowrap">
-                  <button
-                    className="text-transform: capitalize"
-                    type="button"
-                    key={column}
-                    onClick={() => handleClick(column)}
-                  >
-                    {column} {sortOrder[column] ? "↑" : "↓"}
-                  </button>
+                  {column === "sector" ? (
+                    <span className="capitalize">{column}</span>
+                  ) : (
+                    <button
+                      className="text-transform: capitalize"
+                      type="button"
+                      key={column}
+                      onClick={() => handleClick(column)}
+                    >
+                      {column} {sortOrder[column] ? "↑" : "↓"}
+                    </button>
+                  )}
                 </th>
               ))}
             </tr>
