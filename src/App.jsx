@@ -30,14 +30,16 @@ function App() {
   }
 
   return (
-    <>
+    <div className="bg-slate-300">
       <Header onLogout={onLogout} />
-      {state.isLoggedIn ? (
-        <AssetList assets={state.assets} onLoadAssets={onLoadAssets} />
-      ) : (
-        <LoginForm onLogin={onLogin} />
-      )}
-    </>
+      <body>
+        {state.isLoggedIn ? (
+          <AssetList assets={state.assets} onLoadAssets={onLoadAssets} />
+        ) : (
+          <LoginForm onLogin={onLogin} />
+        )}
+      </body>
+    </div>
   );
 }
 
